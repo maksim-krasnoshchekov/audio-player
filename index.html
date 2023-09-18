@@ -3,28 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <title>audio-player</title>
 </head>
 <body>
-    <div class="player">
-        <img class="player__lable" src="" alt="lable">
-        <div class="player__control control">
-            <img class="control__nuttom-play" src="image/icons/play.png" alt="play">
-            <img class="control__nuttom-pause" src="image/icons/pause.png" alt="pause">
-            <p class="player__song-singer">Beyonce
-                <span class="player__song-name">Don't Hurt Yourself</span>
-            </p>
-            <div class="control__buttons-flip">
-                <img class="control__button-previous" src="image/icons/backward.png" alt="previous">
-                <img class="control__button-next" src="image/icons/forward.png" alt="next">
-            </div>    
-        </div>
-        <div class="playback">
-            <span class="song-length">3:53</span>
-            <div class="time-line">
-                <div class="slider"></div>
+    <div class="background-blur">
+        <div class="player">
+            <div class="player__label-wrapper">
+                <img class="player__lable" src="image/lemonade.png" alt="lable">
             </div>
-            <span class="song-time">0:00</span>
+            <div class="player__control control">
+                <div class="control__buttons-wrapper">
+                    <img class="control__buttom-play" src="image/icons/play.png" alt="play">
+                    <img class="control__buttom-pause" src="image/icons/pause.png" alt="pause">
+                    <p class="player__song-singer">Beyonce
+                        <span class="player__song-name">Don't Hurt Yourself</span>
+                    </p>
+                    <div class="control__buttons-flip">
+                        <img class="control__button-previous" src="image/icons/backward.png" alt="previous">
+                        <img class="control__button-next" src="image/icons/forward.png" alt="next">
+                    </div> 
+                </div>
+                <div class="playback">
+                    <span class="song-length">3:53</span>
+                    <div class="time-line">
+                        <div class="slider"></div>
+                    </div>
+                    <span class="song-time">0:00</span>
+                </div> 
+            </div>
         </div>
     </div>
 </body>
