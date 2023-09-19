@@ -21,45 +21,35 @@ body {
 .player {
     overflow: hidden;
     width: 335px;
-    height: 400px;
+    height: 455px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,1);
     display: flex;
     flex-direction: column;
 }
 .player__label-wrapper {
-    height: 268px;
+    min-height: 268px;
+    overflow: hidden;
 }
 .player__lable {
-    height: 100%;
+    transition: transform 1s;
+    height: 268px;
     width: 100%;
 }
 .player__control {
     height: 100%;
-    padding: 17px 30px 5px;
+    padding: 15px 20px 5px;
     background: -webkit-linear-gradient(45deg, rgb(40, 40, 40), rgb(133, 133, 133));
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-.control {
 }
 .control__buttons-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.control__buttom-play {
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-    filter: invert(1);
-    transition: opacity 0.4s;
-}
-.control__buttom-play:hover {
-    opacity: 0.6;
-}
-.control__buttom-pause {
+.control__button-play {
     cursor: pointer;
     width: 50px;
     height: 50px;
@@ -67,10 +57,32 @@ body {
     display: none;
     transition: opacity 0.4s;
 }
-.control__buttom-pause:hover {
+.control__button-play:hover {
     opacity: 0.6;
 }
+.control__button-play:active {
+    opacity: 0.4;
+}
+.control__button-pause {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    filter: invert(1);
+    display: none;
+    transition: opacity 0.4s;
+}
+.control__button-pause:hover {
+    opacity: 0.6;
+}
+.control__button-pause:active {
+    opacity: 0.4;
+}
+.active {
+    display: block;
+}
 .player__song-singer {
+    padding-left: 15px;
+    width: 100%;
     font-weight: bold;
     font-size: 20px;
     color: rgb(193, 255, 6);
@@ -83,7 +95,10 @@ body {
     color: white;
 }
 .control__buttons-flip {
+    display: flex;
+    flex-direction: column;
     width: 30px;
+    gap: 2.5px;
 }
 .control__button-previous {
     cursor: pointer;
@@ -95,6 +110,9 @@ body {
 .control__button-previous:hover {
     opacity: 0.6;
 }
+.control__button-previous:active {
+    opacity: 0.4;
+}
 .control__button-next {
     cursor: pointer;
     width: 30px;
@@ -105,7 +123,11 @@ body {
 .control__button-next:hover {
     opacity: 0.6;
 }
+.control__button-next:active {
+    opacity: 0.4;
+}
 .playback {
+    margin-top: 10px;
     align-self: center;
     width: 225px;
     display: flex;
@@ -119,9 +141,9 @@ body {
 }
 .time-line {
     cursor: pointer;
-    margin: 5px 0;
+    margin: 3px 0;
     position: relative;
-    width: 225px;
+    width: 220px;
     height: 5px;
     background-color: black;
     font-size: 13px;
@@ -131,6 +153,7 @@ body {
     cursor: pointer;
     position: absolute;
     top: -2.5px;
+    left: 0;
     height: 10px;
     width: 7px;
     background: -webkit-linear-gradient(45deg, rgb(213, 213, 213), rgb(193, 255, 6));
@@ -141,3 +164,113 @@ body {
     font-size: 13px;
     color: white;
 }
+.footer {
+    margin-top: 10px;
+    color:#000;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    font-size: 18px;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer__volume-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.footer__link-github {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+
+}
+
+.footer__icon-github {
+    width: 30px;
+    height: 30px;
+    transition: all 0.4s;
+}
+
+.footer__icon-github:hover {
+    filter: invert(1);
+}
+
+.footer__icon-github:active {
+    opacity: 0.6;
+}
+
+.player__volume {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    transition: all 0.4s;
+    display: none;
+}
+.player__volume:hover {
+    filter: invert(1);
+}
+.player__volume:active {
+    opacity: 0.6;
+}
+.player__volume-mute {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    transition: all 0.4s;
+    display: none;
+}
+.player__volume-mute:hover {
+    filter: invert(1);
+}
+.player__volume-mute:active {
+    opacity: 0.6;
+}
+.volume-active {
+    display: block;
+}
+.bar-wrapper {
+    position: absolute;
+    left: 62px;
+    display: flex; 
+    align-items: center; 
+    height: 18px;
+    width: 0;
+}
+.volume-bar {
+    transition: all 0.4s;
+    cursor: pointer;
+    position: absolute;
+    background-color: #fff;
+    width: 0;
+    height: 4px;
+    border-radius: 5px;
+}
+
+
+.volume-slider {
+    position: relative;
+    top: -3.5px;
+    left: 45px;
+    height: 10px;
+    width: 5px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: solid 1px #000;
+    display: none;
+}
+
+.footer__rsshool-icon {
+    min-width: 81px;
+    height: 30px;
+    transition: all 0.4s;
+}
+
+.footer__rsshool-icon:hover {
+    filter: invert(1);
+}
+
+.footer__rsshool-icon:active {
+    opacity: 0.6;
+}
+
